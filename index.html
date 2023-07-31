@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -134,6 +134,83 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhao Yi Xiao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZYX's Blog">
+      <meta itemprop="description" content="ZYX_Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | ZYX's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/07/31/Spring/" class="post-title-link" itemprop="url">Spring</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-07-31 23:01:31 / 修改时间：23:02:59" itemprop="dateCreated datePublished" datetime="2023-07-31T23:01:31+08:00">2023-07-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="🥬Spring"><a href="#🥬Spring" class="headerlink" title="🥬Spring"></a>🥬Spring</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>设计模式是软件设计中常见问题的可重用解决方案。它代表了最佳的实践,通常被有经验的面向对象的软件开发人员所采用。设计模式通过提高代码的可重用性、代码间的耦合度降低、程序的可靠性提高等优点,使程序的开发效率和质量得到提高。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/31/Spring/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -173,7 +250,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-07-31 21:49:53 / 修改时间：22:02:03" itemprop="dateCreated datePublished" datetime="2023-07-31T21:49:53+08:00">2023-07-31</time>
+      <time title="创建时间：2023-07-31 21:49:53 / 修改时间：23:01:08" itemprop="dateCreated datePublished" datetime="2023-07-31T21:49:53+08:00">2023-07-31</time>
     </span>
 
   
@@ -186,835 +263,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="推广管理"><a href="#推广管理" class="headerlink" title="推广管理"></a>推广管理</h1><h2 id="推广管理-整体"><a href="#推广管理-整体" class="headerlink" title="推广管理-整体"></a>推广管理-整体</h2><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230722202540112.png" alt="image-20230722202540112"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230727093911162.png" alt="image-20230727093911162"></p>
-<p>命名规则：三层：属于谁，叫什么，干什么</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230722230745458.png" alt="image-20230722230745458"></p>
-<p>单纯点击访问👆</p>
-<p>数据库表</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723121928721.png" alt="image-20230723121928721"></p>
-<p>从登录一路点过来：</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723162349112.png" alt="image-20230723162349112"></p>
-<blockquote>
-<p>虽然是三个不同的区域管理，实现的功能具体到方法无非就是增删改查</p>
-<p>设计就从：关键还是SQL语句，所有的一切都服务于SQL</p>
-<ol>
-<li>请求数据（接收-格式）</li>
-<li>处理（controller接收数据-JSON转java基本类型、转service实现数据操作sql语句逻辑、dao被调用-domain、mapper的方法）</li>
-<li>响应数据（生成-格式）</li>
-</ol>
-<p>为什么要有Service层：，同一个接口会有不同的实现方式：多种impl</p>
-<p>一个关键需求：要求的层级关系返回值，数据库中的数据都是平级的单条数据：</p>
-<ol>
-<li><p>实现1：多条sql语句：mybatis的多表查询：自己在对应的Mapper中加语句</p>
-</li>
-<li><p>实现2：用java集合类+三层循环</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230724103110115.png" alt="image-20230724103110115"></p>
-</li>
-<li><p>实现3：Java+MySql</p>
-</li>
-<li><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230724100603262.png" alt="image-20230724100603262"></p>
-</li>
-</ol>
-<hr>
-<p>MyBatis Generator生成类执行CRUD操作的调用链:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[Service] --&gt; B[DAO]</span><br><span class="line">B --&gt; C[Mapper]</span><br><span class="line">C --&gt; D[SQL]</span><br><span class="line">D --&gt; E[Database]</span><br><span class="line"></span><br><span class="line">classDef grey fill:#ddd,stroke:#fff,stroke-width:2px;</span><br><span class="line">class A,E grey</span><br></pre></td></tr></table></figure>
-
-<p>代码示例:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增</span></span><br><span class="line"><span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(); <span class="comment">//模型类</span></span><br><span class="line">userMapper.insert(user); <span class="comment">//Mapper接口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//删 </span></span><br><span class="line"><span class="type">UserExample</span> <span class="variable">example</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserExample</span>(); <span class="comment">//Example类</span></span><br><span class="line">example.createCriteria().andIdEqualTo(<span class="number">1</span>);</span><br><span class="line">userMapper.deleteByExample(example);</span><br><span class="line"></span><br><span class="line"><span class="comment">//改</span></span><br><span class="line"><span class="type">User</span> <span class="variable">updateUser</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">updateUser.setId(<span class="number">1</span>);</span><br><span class="line">userMapper.updateByPrimaryKey(updateUser); </span><br><span class="line"></span><br><span class="line"><span class="comment">//查</span></span><br><span class="line"><span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userMapper.selectByPrimaryKey(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>流程说明:</p>
-<ul>
-<li>Service层调用DAO层 </li>
-<li>DAO实现类调用Mapper接口</li>
-<li>Mapper接口执行SQL语句</li>
-<li>SQL操作数据库完成CRUD</li>
-</ul>
-<p>可以看到代码调用链从Service到数据库,利用生成类可以高效实现CRUD操作。</p>
-</blockquote>
-<h3 id="controller主要负责："><a href="#controller主要负责：" class="headerlink" title="controller主要负责："></a>controller主要负责：</h3><ol>
-<li><p>接收请求信息，造Bean对象（由Generator创建的和数据库表对应的Bean类）</p>
-<blockquote>
-<ol>
-<li>对数据库有修改的一般是Post请求，只是查看的是Get请求</li>
-<li>Post请求需要在请求体中获取信息，因为传来的JSON信息，需要用到<strong>JacksonUtil</strong>进行类型转换，有两种思路：<ol>
-<li>逐条获取并转换参数，有基础类型和其他类型两种写法</li>
-<li>先得到请求体后利用ObjectMapper整体转换，与上相比需要多创建一个对象，在传入参数较多的情况下使用比较方便</li>
-</ol>
-</li>
-<li>Get请求需要从请求头中获取信息，只有req.getParameter一种可用</li>
-</ol>
-</blockquote>
-</li>
-<li><p>通过将Bean对象或个别参数 填入 新建Service接口的实现类中，返回值即结果集或处理过的结果</p>
-</li>
-<li><p>根据需要造返回体，需要<strong>ResponseUtil</strong>形成成功或者失败的响应格式，再用<strong>resp</strong>+<strong>JacksonUtil</strong>输出。如果分多集，可以先用Map&lt;String, Object&gt;的形式将结果集（当个对象或者对象数组或集合）填入对应的“key”中，为了对应JSON格式</p>
-</li>
-</ol>
-<h3 id="service主要负责："><a href="#service主要负责：" class="headerlink" title="service主要负责："></a>service主要负责：</h3><p>接口规定，连接controller和dao层操作</p>
-<ol>
-<li>需要建立<strong>SqlSession</strong>、相关Bean对象（看SQL的返回结果，如果是增删改可以只设置一个int接收改动行数）及其<strong>Mapper</strong>（其中含有Mybatis-Generator生成的基本SQL操作：增删改查的byExample、byPrimarykey、one等）<ol>
-<li>其中如果用到了查询操作需要创建对应对象的<strong>Example</strong>类，其中的criteria内部类负责查询条件的拼接</li>
-<li>如果需要多表联查等复杂操作可以自己定义一个Mapper</li>
-<li>以上以下涉及的需要依赖注入的部分</li>
-</ol>
-</li>
-<li>最后可根据dao的查询结果返回给controller一个对象</li>
-</ol>
-<h3 id="dao层主要负责"><a href="#dao层主要负责" class="headerlink" title="dao层主要负责"></a>dao层主要负责</h3><p>本项目的dao层基本上都是MB生成的包括domain、mapper、typehandler，基本上涵盖了所有的dao层操作。比较复杂的多对多的多表联查需要自己设置：VO、BO类、Mapper接口以及对应的Mapper.xml</p>
-<h2 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h2><h3 id="list方法"><a href="#list方法" class="headerlink" title="list方法"></a>list方法</h3><ol>
-<li>思路<ul>
-<li>查询广告&#x2F;专题列表,可分页和按条件查询</li>
-<li>返回广告&#x2F;专题的简要信息,如ID、名称、状态等</li>
-</ul>
-</li>
-<li>实现<ol>
-<li>controller读取Get请求数据：其中包含页数信息参数</li>
-<li>service查询，条件中要加入逻辑删除判断</li>
-<li></li>
-</ol>
-</li>
-</ol>
-<h3 id="create方法"><a href="#create方法" class="headerlink" title="create方法"></a>create方法</h3><ol>
-<li><p>思路：</p>
-<ul>
-<li><p>创建新的广告&#x2F;专题数据</p>
-</li>
-<li><p>封装广告&#x2F;专题的信息,插入数据库</p>
-</li>
-<li><p>返回创建成功的广告&#x2F;专题的ID</p>
-</li>
-</ul>
-</li>
-<li><p>实现：</p>
-<ol>
-<li><p>Conroller读取请求中JSON数据：</p>
-<ol>
-<li><p>如果单条数据，不用建立对象，省事</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> JacksonUtil.parseString(requestBody, <span class="string">&quot;username&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p><a name="如果数据过多，呈对象形式_2" href="#如果数据过多，呈对象形式_1"><strong>如果数据过多，呈对象形式</strong></a></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725134005658.png" alt="image-20230725134005658"></p>
-</li>
-</ol>
-</li>
-<li><p>service层中先判断库中是否有存在，没有的话直接insert</p>
-<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725195918269.png" alt="image-20230725195918269"></li>
-</ol>
-</li>
-<li><p>回到controller中判断是否返回空值，如果返回值不为空就说明成功</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="update方法"><a href="#update方法" class="headerlink" title="update方法"></a>update方法</h3><ol>
-<li><p>思路</p>
-<ul>
-<li><p>更新已存在的广告&#x2F;专题数据</p>
-</li>
-<li><p>根据广告&#x2F;专题ID查找数据,然后更新其属性</p>
-</li>
-<li><p>如启用&#x2F;禁用广告,修改专题名称等</p>
-</li>
-</ul>
-</li>
-<li><p>实现：</p>
-<ol>
-<li><a name="如果数据过多，呈对象形式_1" href="#如果数据过多，呈对象形式_2"><strong>如果数据过多，呈对象形式</strong></a></li>
-<li>将数据判断后将domain对象传给Service实现，一句updateByPrimaryKey搞定</li>
-<li>返回前判断</li>
-</ol>
-</li>
-</ol>
-<h3 id="delete方法"><a href="#delete方法" class="headerlink" title="delete方法"></a>delete方法</h3><ol>
-<li><p>思路</p>
-<ul>
-<li><p>删除已存在的广告&#x2F;专题数据</p>
-</li>
-<li><p>根据广告&#x2F;专题ID在数据库中将其标记为删除</p>
-</li>
-<li><p>批量删除时可传入多个ID进行删除</p>
-</li>
-</ul>
-</li>
-<li><p>实现：</p>
-<ol>
-<li></li>
-</ol>
-</li>
-</ol>
-<h3 id="listUser方法"><a href="#listUser方法" class="headerlink" title="listUser方法"></a>listUser方法</h3><ol>
-<li><p>思路：</p>
-<ul>
-<li><p>查询某个优惠券的领取用户列表；</p>
-<p>  通过传递优惠券ID,可以查询出所有已经领取这个优惠券的用户信息,包括用户ID、领取时间等。</p>
-</li>
-<li><p>查询某个用户领取的优惠券列表；</p>
-<p>  通过传递用户ID,可以查询出该用户所有的优惠券信息,包括优惠券名称、面值、有效期等。</p>
-</li>
-<li><p>条件查询用户领取情况：</p>
-<p>  可以传入过滤条件,比如领取时间范围、优惠券类型等,查询满足这些条件的用户-优惠券信息。</p>
-</li>
-<li><p>统计优惠券领取用户数量：</p>
-<p>  可以统计某个优惠券被领取的总人数。</p>
-</li>
-<li><p>分页查询用户领取列表：</p>
-<p>  可以对查询结果进行分页,然后返回指定页码的数据。</p>
-</li>
-<li><p>排序查询用户领取列表：</p>
-<p>  可以按一定顺序(时间、字母等)排序返回用户领取的优惠券列表。</p>
-</li>
-</ul>
-</li>
-<li><p>实现：</p>
-<ol>
-<li>123</li>
-</ol>
-</li>
-</ol>
-<h2 id="功能实现："><a href="#功能实现：" class="headerlink" title="功能实现："></a>功能实现：</h2><h3 id="ad：广告管理"><a href="#ad：广告管理" class="headerlink" title="ad：广告管理"></a><strong>ad：广告管理</strong></h3><h4 id="list"><a href="#list" class="headerlink" title="list"></a><strong>list</strong></h4><ol>
-<li><p>请求响应：</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725144825577.png" alt="image-20230725144825577"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725150427832.png" alt="image-20230725150427832"></p>
-</li>
-<li><p>实现</p>
-<ol>
-<li>在搜索过后没法全部显示</li>
-</ol>
-</li>
-</ol>
-<h4 id="create"><a href="#create" class="headerlink" title="create"></a><strong>create</strong></h4><ol>
-<li><p>消息：三个分别是：</p>
-<p> option、post请求响应、前端生成消息提醒</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723124453794.png" alt="image-20230723124453794"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726150128954.png" alt="image-20230726150128954"></p>
-<p> 请求、响应内容：</p>
-<p>  <a name="上传图片：在create之前如果有文件就先上传文件，用admin/storage/create_1" href="#上传图片：在create之前如果有文件就先上传文件，用admin/storage/create_2"><strong>上传图片：在create之前如果有文件就先上传文件，用admin&#x2F;storage&#x2F;create</strong></a></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723125730429.png" alt="image-20230723125730429"></p>
-<p> 123</p>
-<p> 123</p>
-<p> 123</p>
-<p> 123</p>
-</li>
-<li><p>对应数据库内容</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723104528237.png" alt="image-20230723104528237"></p>
-</li>
-<li><p>流程</p>
- <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/create%E6%B5%81%E7%A8%8B.png" alt="create流程" style="zoom:200%;" />
-
-<ul>
-<li><p>前端发送上传文件请求</p>
-<ul>
-<li><span style=color:#34495e;background:#EBFFEB><strong>问题</strong></span>：为什么请求中的url就已经是URL形式，什么时候处理的文件上传？<ul>
-<li>有个admin&#x2F;storage&#x2F;create，存图片到wx&#x2F;storage，并且把名字给换了</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>服务器端接收请求并处理文件数据：</p>
-<ol>
-<li><p>请求体中获取数据，JSON转Java对象</p>
-</li>
-<li><p>判断内容是否符合要求</p>
-<ol>
-<li>name、content、url不能为空</li>
-<li>图片上传大小、格式限制</li>
-</ol>
- <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723122130371.png" alt="image-20230723122130371" style="zoom:33%;" />
-</li>
-<li><p>进行数据库操作</p>
-</li>
-</ol>
-</li>
-<li><p>控制器层与业务层协作保存文件和数据</p>
-</li>
-<li><p>数据库执行插入操作</p>
-</li>
-<li><p>返回响应给前端</p>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="update"><a href="#update" class="headerlink" title="update"></a><strong>update</strong></h4><ol>
-<li><p>请求响应</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723142144075.png" alt="image-20230723142144075"></p>
- <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723142203580.png" alt="image-20230723142203580" style="zoom: 50%;" />
-</li>
-<li><p>流程:</p>
-</li>
-<li><p>123</p>
-</li>
-</ol>
-<h4 id="delete"><a href="#delete" class="headerlink" title="delete"></a><strong>delete</strong></h4><ol>
-<li><p>响应请求：</p>
-<ol>
-<li>先删除，后展示</li>
-</ol>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723110823474.png" alt="image-20230723110823474"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723110903490.png" alt="image-20230723110903490" style="zoom: 80%;" /><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723111022855.png" alt="image-20230723111022855" style="zoom: 67%;" /></p>
-</li>
-<li><p>流程图</p>
- <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/delete%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="delete流程图" style="zoom:200%;" />
-
-<ul>
-<li>前端发送删除请求,请求中包含删除条件</li>
-<li>服务器接收请求,控制器层解析请求</li>
-<li>业务层处理请求,构建删除条件</li>
-<li>调用DAO执行数据库删除操作</li>
-<li>数据库根据条件执行DELETE操作</li>
-<li>返回响应给前端</li>
-<li>前端获取并处理响应</li>
-</ul>
-</li>
-</ol>
-<h3 id="coupon：优惠券管理"><a href="#coupon：优惠券管理" class="headerlink" title="coupon：优惠券管理"></a>coupon：优惠券管理</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723211541172.png" alt="image-20230723211541172"></p>
-<h4 id="⭐list"><a href="#⭐list" class="headerlink" title="⭐list"></a>⭐list</h4><ol>
-<li><p>请求&#x2F;响应：</p>
-<ol>
-<li>点击优惠券管理同时发三个GET请求：goods&#x2F;list、coupon&#x2F;list、category&#x2F;list</li>
-</ol>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723212950884.png" alt="image-20230723212950884"></p>
-</li>
-</ol>
-<img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723212507589.png" alt="image-20230723212507589"  />
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /admin/coupon/list?page=<span class="number">1</span>&amp;limit=<span class="number">20</span>&amp;sort=add_time&amp;order=desc HTTP/<span class="number">1.1</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li>显示刷新过之后新增的没了，可能是create设置的morendelete是true？</li>
-</ol>
-<h4 id="⭐create"><a href="#⭐create" class="headerlink" title="⭐create"></a>⭐create</h4><ol>
-<li><p>请求&#x2F;响应：</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723212907523.png" alt="image-20230723212907523"></p>
- <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230723212839260.png" alt="image-20230723212839260" style="zoom:50%;" />
-
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230724142643777.png" alt="image-20230724142643777"></p>
-<p> 👆一个问题：传入的goodsvalue是字符串，数据库中是Integer[]<em>需要用到mybatis-generator中的typehandler：自定义handler</em>：创建数据</p>
-</li>
-<li><p>实现</p>
-</li>
-<li></li>
-</ol>
-<h4 id="update-1"><a href="#update-1" class="headerlink" title="update"></a>update</h4><ol>
-<li>请求响应<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221410238.png" alt="image-20230723221410238"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221353847.png" alt="image-20230723221353847" style="zoom: 67%;" /></li>
-</ol>
-</li>
-<li>实现</li>
-</ol>
-<h4 id="delete-1"><a href="#delete-1" class="headerlink" title="delete"></a>delete</h4><ol>
-<li>请求响应：<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221527417.png" alt="image-20230723221527417"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221602881.png" alt="image-20230723221602881" style="zoom:50%;" /></li>
-</ol>
-</li>
-<li>实现</li>
-</ol>
-<p>输入id，逻辑删除对应</p>
-<h4 id="listuser"><a href="#listuser" class="headerlink" title="listuser"></a>listuser</h4><ol>
-<li>业务分析：</li>
-</ol>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723174306174.png" alt="image-20230723174306174"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723174316807.png" alt="image-20230723174316807"></p>
-<p>点击优惠券详情后会发来两个Get请求：<strong>read</strong>（根据ID获取购物券详情）、<strong>listuser</strong>（根据ID+分页信息获取相关User的信息）</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723171930127.png" alt="image-20230723171930127"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723174848532.png" alt="image-20230723174848532" style="zoom: 67%;" /><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723172005113.png" alt="image-20230723172005113" style="zoom: 67%;" /></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723174420458.png" alt="image-20230723174420458"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723174432336.png" alt="image-20230723174432336"></p>
-<ol start="2">
-<li>实现：<ol>
-<li>doGet分发</li>
-<li></li>
-</ol>
-</li>
-<li>阿斯顿：</li>
-</ol>
-<h3 id="topic：专题管理"><a href="#topic：专题管理" class="headerlink" title="topic：专题管理"></a>topic：专题管理</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723211546586.png" alt="image-20230723211546586"></p>
-<h4 id="read"><a href="#read" class="headerlink" title="read"></a>read</h4><ol>
-<li><p>请求响应</p>
-<p> 123</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725203813099.png" alt="image-20230725203813099"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725203935029.png" alt="image-20230725203935029"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725203723022.png" alt="image-20230725203723022"></p>
-</li>
-<li><p>实现：</p>
-<ol>
-<li>需要根据其中的goods找goods</li>
-</ol>
-</li>
-</ol>
-<h4 id="list-1"><a href="#list-1" class="headerlink" title="list"></a>list</h4><ol>
-<li>请求&#x2F;响应：<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723220004739.png" alt="image-20230723220004739"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723220101532.png" alt="image-20230723220101532" style="zoom: 50%;" /><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723220104669.png" alt="image-20230723220104669" style="zoom:50%;" /></li>
-</ol>
-</li>
-<li>实现：</li>
-</ol>
-<h4 id="create-1"><a href="#create-1" class="headerlink" title="create"></a>create</h4><ol>
-<li><p>请求&#x2F;响应</p>
-<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723215149623.png" alt="image-20230723215149623"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723220207766.png" alt="image-20230723220207766"  /></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230724195743187.png" alt="image-20230724195743187"></li>
-</ol>
-</li>
-<li><p>实现</p>
-<ol>
-<li><p>类型转换</p>
-<blockquote>
-<p>阿斯顿</p>
-<p>asd </p>
-<p>阿斯顿</p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="update-2"><a href="#update-2" class="headerlink" title="update"></a>update</h4><ol>
-<li>请求&#x2F;响应<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221958478.png" alt="image-20230723221958478"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723221942910.png" alt="image-20230723221942910" style="zoom:67%;" /></li>
-</ol>
-</li>
-<li>实现<ol>
-<li></li>
-</ol>
-</li>
-</ol>
-<h4 id="delete-2"><a href="#delete-2" class="headerlink" title="delete"></a>delete</h4><ol>
-<li>请求&#x2F;响应<ol>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723215642607.png" alt="image-20230723215642607"></li>
-<li>多重删除：</li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723215907436.png" alt="image-20230723215907436"></li>
-</ol>
-</li>
-<li>实现</li>
-</ol>
-<h1 id="个人接口"><a href="#个人接口" class="headerlink" title="个人接口"></a>个人接口</h1><h2 id="商城管理"><a href="#商城管理" class="headerlink" title="商城管理"></a>商城管理</h2><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723191832445.png" alt="image-20230723191832445"></p>
-<h3 id="admin-region✅"><a href="#admin-region✅" class="headerlink" title="admin region✅"></a>admin region✅</h3><h4 id="多表查询-list"><a href="#多表查询-list" class="headerlink" title="多表查询 list"></a>多表查询 list</h4><ol>
-<li><p>请求&#x2F;响应</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725214534646.png" alt="image-20230725214534646"></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725214557508.png" alt="image-20230725214557508"></p>
-</li>
-<li><p>实现：两种思路：区别在service层：</p>
-<ol>
-<li><p>自己编写SQL语句，多表拼接查询</p>
-<ol>
-<li><p>使用多表联查</p>
-</li>
-<li><pre><code class="sql"> &lt;resultMap id=&quot;Map&quot; type=&quot;org.example.zyx.bean.Region&quot;&gt;
-         &lt;id column=&quot;province_id&quot; property=&quot;id&quot;/&gt;
-         &lt;result column=&quot;province_pid&quot; property=&quot;pid&quot;/&gt;
-         &lt;result column=&quot;province_name&quot; property=&quot;name&quot;/&gt;
-         &lt;result column=&quot;province_type&quot; property=&quot;type&quot;/&gt;
-         &lt;result column=&quot;province_code&quot; property=&quot;code&quot;/&gt;
-         &lt;collection property=&quot;children&quot; ofType=&quot;org.example.zyx.bean.Region&quot;&gt;
-             &lt;id column=&quot;city_id&quot; property=&quot;id&quot;/&gt;
-             &lt;result column=&quot;city_pid&quot; property=&quot;pid&quot;/&gt;
-             &lt;result column=&quot;city_name&quot; property=&quot;name&quot;/&gt;
-             &lt;result column=&quot;city_type&quot; property=&quot;type&quot;/&gt;
-             &lt;result column=&quot;city_code&quot; property=&quot;code&quot;/&gt;
-             &lt;collection property=&quot;children&quot; ofType=&quot;org.example.zyx.bean.Region&quot;&gt;
-                 &lt;id column=&quot;district_id&quot; property=&quot;id&quot;/&gt;
-                 &lt;result column=&quot;district_pid&quot; property=&quot;pid&quot;/&gt;
-                 &lt;result column=&quot;district_name&quot; property=&quot;name&quot;/&gt;
-                 &lt;result column=&quot;district_type&quot; property=&quot;type&quot;/&gt;
-                 &lt;result column=&quot;district_code&quot; property=&quot;code&quot;/&gt;
-             &lt;/collection&gt;
-         &lt;/collection&gt;
-     &lt;/resultMap&gt;
- 
-     &lt;select id=&quot;selectAll&quot; resultMap=&quot;Map&quot;&gt;
-         SELECT *
-         FROM (SELECT
-                   id as province_id,
-                   pid as province_pid,
-                   name as province_name,
-                   type as province_type,
-                   code as province_code
-               FROM market_region WHERE type = 1) p
-                  LEFT JOIN (SELECT
-                                 id as city_id,
-                                 pid as city_pid,
-                                 name as city_name,
-                                 type as city_type,
-                                 code as city_code
-                             FROM market_region WHERE type = 2) c
-                  ON p.province_id = c.city_pid
-                  LEFT JOIN (SELECT
-                                 id as district_id,
-                                 pid as district_pid,
-                                 name as district_name ,
-                                 type as district_type,
-                                 code as district_code
-                             FROM market_region WHERE type = 3) d
-                  ON d.district_pid = c.city_id
-     &lt;/select&gt;
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">    2. 多次调用Java中的基础查询对象</span><br><span class="line"></span><br><span class="line">        1. 使用VO+多次查询封装，三重循环</span><br><span class="line">        2. &lt;img src=&quot;https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725223217078.png&quot; alt=&quot;image-20230725223217078&quot; style=&quot;zoom:50%;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">### admin order❓</span><br><span class="line"></span><br><span class="line">#### list</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line"></span><br><span class="line">    ![image-20230725234547785](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725234547785.png)</span><br><span class="line"></span><br><span class="line">    先Channel（Get）再List（Get）</span><br><span class="line"></span><br><span class="line">    ![image-20230725234631310](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725234631310.png)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    ![image-20230725234814690](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725234814690.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230725235113933](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725235113933.png)</span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line">#### detail</span><br><span class="line"></span><br><span class="line">1. **请求/响应**：传来一个OrderID，到MarketOrderGoods里拿订单对应的商品信息，再用OrderID在Order表里找对应的UserID到MarketUser找对应的User</span><br><span class="line"></span><br><span class="line">    ![image-20230725235913679](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725235913679.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230725235939865](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725235939865.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230725235953698](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725235953698.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230726000140047](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726000140047.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230726000322824](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726000322824.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230726000525304](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726000525304.png)</span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### refund</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line">#### channel</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line"></span><br><span class="line">    ![image-20230727000056929](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230727000056929.png)</span><br><span class="line"></span><br><span class="line">      ![image-20230727000038051](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230727000038051.png)</span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line">#### ship</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line"></span><br><span class="line">    ![image-20230726200814186](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726200814186.png)</span><br><span class="line"></span><br><span class="line">    ![image-20230726200927220](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726200927220.png)</span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line">#### delete</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line"></span><br><span class="line">    ![image-20230727000144103](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230727000144103.png)</span><br><span class="line"></span><br><span class="line">      ![image-20230727000125699](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230727000125699.png)</span><br><span class="line"></span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 登录登出✅</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">![image-20230723191841318](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723191841318.png)</span><br><span class="line"></span><br><span class="line">### 登录</span><br><span class="line"></span><br><span class="line">#### 构造admin auth login</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 信息</span><br><span class="line"></span><br><span class="line">#### 清楚admin auth info</span><br><span class="line"></span><br><span class="line">1. **请求/响应**</span><br><span class="line">2. **实现**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 推广管理✅</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">![image-20230723191847328](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723191847328.png)</span><br><span class="line"></span><br><span class="line">### 优惠券管理</span><br><span class="line"></span><br><span class="line">见上✅</span><br><span class="line"></span><br><span class="line">### 创建优惠券</span><br><span class="line"></span><br><span class="line">见上✅</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 商品管理✅</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">![image-20230723191855177](https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723191855177.png)</span><br><span class="line"></span><br><span class="line">### 图片上传：admin storage create</span><br><span class="line"></span><br><span class="line">&gt; 效果： &lt;a name=&quot;上传图片：在create之前如果有文件就先上传文件，用admin/storage/create_2&quot; href=&quot;#上传图片：在create之前如果有文件就先上传文件，用admin/storage/create_1&quot;&gt;**上传图片：在create之前如果有文件就先上传文件，用admin/storage/create**&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">#### 思路</span><br><span class="line"></span><br><span class="line">&gt; ```java</span><br><span class="line">&gt; //对象的存储：其实就是文件上传</span><br><span class="line">&gt;  //1.进行文件上传；2、将上传的文件信息存储到数据库 3.返回回执信息</span><br><span class="line">&gt;  //说明：其中，当前接口需要返回url，也就是商品图片地址链接</span><br><span class="line">&gt;  //关于该链接：</span><br><span class="line">&gt;  // 1.可以将文件存储在应用根目录，返回一个相对于应用根目录的相对路径，借助于缺省Servlet可以将图片显示出来 http://localhost:80803/image/xxxx.jpg</span><br><span class="line">&gt;  //2.可以按照101公网上面的写法/wx/storage/fetch/xxx这种方式访问，可以主动配置一个servlet，然后将本地的资源文件响应出去----我们写这种方式</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>需要使用两个servlet共同处理：&#x2F;admin&#x2F;storage&#x2F;* + &#x2F;wx&#x2F;storage&#x2F;fetch&#x2F;* </p>
-<p>前者将文件传入，重新编码，将文件化为storage对象执行存入（数据库url+本地一个路径）、返回storage相应信息</p>
-<p>后者将规定地址的本地文件读取，并放入响应返回</p>
-</blockquote>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725143339697.png" alt="image-20230725143339697"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230725143632101.png" alt="image-20230725143632101"></p>
-<ol>
-<li><p><strong>请求&#x2F;响应</strong></p>
-<p> ​    </p>
-</li>
-<li><p><strong>实现</strong></p>
-<blockquote>
-<p>以上两段代码的解读</p>
-</blockquote>
-<ol>
-<li><p><a href="......%5CIdeaProjects%5Cjava52-course-materials%5C03-JavaEE&SpringFramework%5C01-%E4%BB%A3%E7%A0%81%5CDay9_Market%5Csrc%5Cmain%5Cjava%5Ccom%5Ccskaoyan%5Cmarket%5Ccontroller%5CAdminStorageController.java">AdminStorageController.java</a> </p>
-<p> 这段代码是实现一个<strong>文件上传功能</strong>的关键逻辑,我来解析一下:</p>
-<ol>
-<li>获取请求中的文件部分(Part),并获取文件名、大小、类型等信息</li>
-<li>生成一个随机key作为文件的名称,存储到数据库和服务器中</li>
-<li>获取服务端的域名domain和上传路径uploadPath</li>
-<li>执行文件写入到服务器的指定路径</li>
-<li>创建一个MarketStorage对象,封装文件信息,插入数据库</li>
-<li>构建文件访问URL,需要带上域名,否则默认是localhost</li>
-<li>插入数据库后,文件有了id,所以再更新一遍数据库(这一步不是必须的)</li>
-<li>构建响应,包含上传后的文件信息</li>
-<li>返回响应结果</li>
-</ol>
-<p> 所以这是一个典型的文件上传实现,包含获取上传文件、写入存储、数据库处理、构建访问URL等所需的关键步骤。</p>
-<p> 主要流程是控制上传文件存储位置,数据库记录文件信息,并返回包含访问URL的结果给客户端。</p>
-</li>
-<li><p><a href="......%5CIdeaProjects%5Cjava52-course-materials%5C03-JavaEE&SpringFramework%5C01-%E4%BB%A3%E7%A0%81%5CDay9_Market%5Csrc%5Cmain%5Cjava%5Ccom%5Ccskaoyan%5Cmarket%5Ccontroller%5CWxStorageFetchController.java">WxStorageFetchController.java</a> </p>
-<p> 这段代码实现了<strong>文件下载的功能</strong>,配合之前的文件上传代码,具体工作流程是:</p>
-<ol>
-<li>从请求URI中提取出key,也就是上传时生成的文件名</li>
-<li>从ServletContext中获取上传文件的根目录uploadPath</li>
-<li>拼接出文件的完整路径</li>
-<li>检查文件是否存在</li>
-<li>如果存在,打开文件输入流,写入响应的输出流</li>
-<li>在循环中分块读取文件数据,写入输出流发送给客户端</li>
-<li>客户端接收到响应数据并保存为文件即实现了下载</li>
-<li>如果文件不存在,返回404状态码</li>
-</ol>
-<p> 主要逻辑是通过key定位文件,获取文件输入流,写入响应输出流。</p>
-<p> 配合上传代码,这实现了一个完整的文件上传下载过程,并且文件存储路径抽取到ServletContext中,避免硬编码。</p>
-<p> 通过ServletContext共享配置,获取key,然后读取文件写入响应,这是一个非常典型的JavaWeb文件下载实现。</p>
-</li>
-</ol>
-</li>
-</ol>
-<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><h3 id="创建商品：admin-goods-create"><a href="#创建商品：admin-goods-create" class="headerlink" title="创建商品：admin goods create"></a>创建商品：admin goods create</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ol>
-<li><p><strong>请求&#x2F;响应</strong></p>
-<ul>
-<li><p>Post请求，传入值为JSON形式，且比较复杂，故需要用到VO类</p>
-<p>  <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726173129016.png" alt="image-20230726173129016"></p>
-</li>
-</ul>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726173417831.png" alt="image-20230726173417831"></p>
-</li>
-<li><p><strong>实现</strong></p>
-<ul>
-<li>VO类<ul>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726173606733.png" alt="image-20230726173606733"></li>
-</ul>
-</li>
-<li>实<ul>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726173631659.png" alt="image-20230726173631659"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="配置管理❓"><a href="#配置管理❓" class="headerlink" title="配置管理❓"></a>配置管理❓</h2><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230723191900049.png" alt="image-20230723191900049"></p>
-<h3 id="商场配置：admin-config-mall"><a href="#商场配置：admin-config-mall" class="headerlink" title="商场配置：admin config mall"></a>商场配置：admin config mall</h3><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><ol>
-<li><p><strong>请求&#x2F;响应</strong></p>
-<ul>
-<li>可处理Post的上传和Get的显示</li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726173749411.png" alt="image-20230726173749411"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726174359607.png" alt="image-20230726174359607"></li>
-<li><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726174426629.png" alt="image-20230726174426629"></li>
-</ul>
-</li>
-<li><p><strong>实现</strong></p>
-<ul>
-<li>阿斯顿</li>
-</ul>
-</li>
-</ol>
-<h2 id="用户统计"><a href="#用户统计" class="headerlink" title="用户统计"></a>用户统计</h2><h3 id="统计报表"><a href="#统计报表" class="headerlink" title="统计报表"></a>统计报表</h3><h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>单独写一个Mapper，用GroupBy</p>
-<p>返回一个OK Map(String Object)：包括两个Map：columns和rows，一个里头加两个</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726213834623.png" alt="image-20230726213834623"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726214050847.png" alt="image-20230726214050847"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726214402616.png" alt="image-20230726214402616"></p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726215202558.png" alt="image-20230726215202558"></p>
-<h1 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="可优化的点："><a href="#可优化的点：" class="headerlink" title="可优化的点："></a>可优化的点：</h3><p>其中的service层调用永久层方法重复步骤可用代理实现</p>
-<h3 id="链式反应："><a href="#链式反应：" class="headerlink" title="链式反应："></a>链式反应：</h3><p>按照先后顺序：</p>
-<ol>
-<li>一般使用一个listener在开始的时候将需要读取的：路径白名单、JDBC或者其他的properties加载进Context域</li>
-<li>使用多个Filter（不改名字的话就得在WebXML文件中进行配置）进行在进入Servlet（controller）之前的前置操作：设置编码解码格式、访问请求拦截、登陆权限校验</li>
-</ol>
-<h3 id="文件加载："><a href="#文件加载：" class="headerlink" title="文件加载："></a>文件加载：</h3><p>无</p>
-<h2 id="技巧使用"><a href="#技巧使用" class="headerlink" title="技巧使用"></a>技巧使用</h2><blockquote>
-<p>整个数据都是JSON的KEY-Value形式，JaksonUtil也是如此获得数据的</p>
-</blockquote>
-<h3 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h3><ol>
-<li><p>Post请求数据在请求体中，一般是JSON形式，需要将其转化为Java对象</p>
-<blockquote>
-<p>需要先获取请求体String，然后再用JacksonUtil中的parse或者ObjectMapper</p>
-</blockquote>
-<ol>
-<li><p>如果传来的JSON数据条目不多，直接JacksonUtil+类型转换就行</p>
-<ol>
-<li><p>实例</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726153244250.png" alt="image-20230726153244250"></p>
-</li>
-</ol>
-</li>
-<li><p>如果是整体的多级对象考虑使用BO+ObjectMapper</p>
-<ol>
-<li><p>实例</p>
-<ol>
-<li><p>BO类：</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726153110874.png" alt="image-20230726153110874"></p>
-</li>
-<li><p>ObjectMapper使用</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726153119046.png" alt="image-20230726153119046"></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>Get</p>
-<ol>
-<li>直接req。Parameter就能得到</li>
-</ol>
-</li>
-</ol>
-<h3 id="数据输出"><a href="#数据输出" class="headerlink" title="数据输出"></a>数据输出</h3><p>使用ResponseUtil + JacksonUtil</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230726153611410.png" alt="image-20230726153611410"></p>
-<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><blockquote>
-<p>MG生成的domain（有POJOBean类和用于拼接SQLwhere条件的Example类，其中拼接方式有critirial和.or两种）、Mapper（接口，对应resource中有xml文件）、TypeHandler（）</p>
-</blockquote>
-<ol>
-<li><p>使用Mybatis-Generator中生成的基础Mapper，可以实现增删改查（查的话需要Example）</p>
-</li>
-<li><p>VO、BO、TypeHandler：需要自己构建传入传出对象格式时创建，如果有数据库中没有对应的类型需要自己补充</p>
-<blockquote>
-<p>Controller使用VO收集请求数据,Service层处理业务,Dao层使用VO持久化,返回BO给Service,Service再封装VO返回Controller。</p>
-<hr>
-<p>其中TypeHandler可以发挥重要作用,主要用在以下地方:</p>
-<ol>
-<li><p>数据传输对象VO</p>
-<p> 可以使用TypeHandler将VO中的属性类型转换为数据库对应的列类型,用于插入和查询。</p>
-</li>
-<li><p>参数绑定</p>
-<p> 在Mapper接口方法中,TypeHandler可以自动转换入参类型到数据库列类型。</p>
-</li>
-<li><p>查询结果映射</p>
-<p> TypeHandler将数据库查询结果中的列类型,自动映射到VO属性中。</p>
-</li>
-<li><p>自定义类型支持</p>
-<p> 可以使用TypeHandler来支持数据库函数返回的自定义类型。</p>
-</li>
-</ol>
-<p>例如实现一个JsonTypeHandler,支持MySQL 5.7的JSON数据类型:这样就可以在Mapper接口直接使用JsonObject作为参数和返回值。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="StringUtil"><a href="#StringUtil" class="headerlink" title="StringUtil"></a>StringUtil</h2><blockquote>
-<p>StringUtil是一个用于字符串操作的工具类,它封装了字符串处理的常用功能,可以简化字符串操作。</p>
-</blockquote>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>StringUtil主要是基于Java自身的String类进行的封装,提供了一些常用的字符串校验、转换、格式化等静态方法。</p>
-</blockquote>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>StringUtil的常用方法包括:</p>
-<ul>
-<li>isEmpty&#x2F;isNotEmpty - 判断字符串是否为空</li>
-<li>equals&#x2F;equalsIgnoreCase - 字符串比较</li>
-<li>concat - 字符串拼接</li>
-<li>toUpper&#x2F;toLower - 大小写转换</li>
-<li>format - 格式化字符串</li>
-<li>getBytes - 字符串转换为字节数组</li>
-<li>substring&#x2F;left&#x2F;right - 字符串截取</li>
-<li>etc.</li>
-</ul>
-<p>例如:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javaCopy <span class="title function_">codeif</span><span class="params">(StringUtil.isEmpty(str)</span>)&#123;</span><br><span class="line">  <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">upper</span> <span class="operator">=</span> StringUtil.toUpper(str);</span><br></pre></td></tr></table></figure>
-
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>参数为空指针时需要处理异常</li>
-<li>避免频繁的字符串拼接操作影响性能</li>
-<li>格式化模板语法安全,防止注入攻击</li>
-</ul>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>代码更简洁,提高开发效率</li>
-<li>可重用性高,避免重复开发</li>
-<li>封装性好,集中管理字符串操作</li>
-<li>可扩展性强,可自定义更多方法</li>
-</ul>
-<p>所以StringUtil通过封装字符串操作的工具方法,可以节约开发时间,提高代码可读性和可维护性。</p>
-<h2 id="JacksonUtil"><a href="#JacksonUtil" class="headerlink" title="JacksonUtil"></a>JacksonUtil</h2><p>Jackson是一个流行的Java JSON解析库，是基于Jackson封装的一个工具类。它简化了JSON与Java对象的互相转换。</p>
-<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>Jackson的核心原理是通过反射获取Java类的结构信息,像字段名、类型等,再根据JSON语法进行转换。通过基于Jackson的轻量级封装，可以减少处理JSON的重复繁琐代码。</p>
-<h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><p>JacksonUtil常见的使用方法有:</p>
-<ul>
-<li>readValue() - JSON解析为Java对象</li>
-<li>writeValueAsString() - Java对象转换为JSON字符串</li>
-</ul>
-<p>例如:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> JacksonUtil.readValue(json, User.class); </span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> JacksonUtil.writeValueAsString(user);</span><br></pre></td></tr></table></figure>
-
-<p>也可以用于Map, List等集合对象与JSON的转换。</p>
-<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>JSON字段名和Java属性名需要一致</li>
-<li>注解可以控制JSON的生成</li>
-<li>需要处理JSON解析异常</li>
-<li>优先使用流的方式处理大JSON数据</li>
-</ul>
-<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>使用简单,减少大量编码工作</li>
-<li>性能高效</li>
-<li>自动转换支持广泛类型</li>
-<li>支持注解控制序列化</li>
-<li>可扩展性强</li>
-</ul>
-<h2 id="ResponseUtil"><a href="#ResponseUtil" class="headerlink" title="ResponseUtil"></a>ResponseUtil</h2><p>ResponseUtil是处理Web接口响应的一个工具类,它可以用于统一接口响应格式,方便接口与客户端的数据交互。</p>
-<h3 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h3><p>ResponseUtil主要基于格式化一个Map来封装响应数据,通常格式如下:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// 数据内容 </span></span><br><span class="line">  <span class="punctuation">&#125;</span> </span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用方法-2"><a href="#使用方法-2" class="headerlink" title="使用方法"></a>使用方法</h3><p>ResponseUtil提供了一些静态方法用于构建响应:</p>
-<ul>
-<li>ok() - 构建成功无数据的响应</li>
-<li>ok(data) - 构建成功有数据的响应</li>
-<li>fail() - 构建失败无数据的响应</li>
-<li>fail(data) - 构建失败有数据的响应</li>
-</ul>
-<p>例如:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 成功无数据</span></span><br><span class="line">ResponseUtil.ok();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 成功有数据</span></span><br><span class="line">ResponseUtil.ok(user); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 失败无数据</span></span><br><span class="line">ResponseUtil.fail(<span class="number">404</span>, <span class="string">&quot;Not Found&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>code和message要符合系统规范</li>
-<li>data不要返回敏感信息</li>
-<li>接口响应格式可以根据需要调整</li>
-</ul>
-<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ul>
-<li>统一接口响应格式和规范</li>
-<li>简化接口返回值处理</li>
-<li>错误码和信息可配置</li>
-<li>鼓励职责单一原则,接口聚焦业务</li>
-</ul>
-<p>所以ResponseUtil可以简化接口响应处理,提高系统接口质量和开发效率。</p>
-<h2 id="PageHelper"><a href="#PageHelper" class="headerlink" title="PageHelper"></a>PageHelper</h2><h3 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li><p>必须</p>
-<ol>
-<li><p>传两个int值，<code>page</code>和<code>limit</code></p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230730213036249.png" alt="image-20230730213036249"></p>
-</li>
-<li><p>写在需要实现的查询语句的上一行</p>
-<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230730213123046.png" alt="image-20230730213123046"></p>
-</li>
-</ol>
-</li>
-<li><p>不能</p>
-</li>
-</ol>
-<h3 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>为什么查询时我们不需要把参数传入我们的查询即可使用呢？</p>
-<p>肯定是在某个地方设置了参数，然后在查询时可以拿到，那么顺其自然很容易就想到了java的juc包下提供的ThreadLocal</p>
-</blockquote>
-<p>流程总结：</p>
-<ol>
-<li>设置分页参数到ThreadLocal中</li>
-<li>调用查询，基于插件（拦截器）拦截query方法，从ThreadLocal中获取分页参数，针对不同的数据库类型使用不同的数据库分页方案</li>
-<li>根据结果包装返回PageInfo，这里注意的是调用了查询方法返回的List实际上是PageHelper的一个内部实现类Page，Page继承自ArrayList，保存了分页使用的参数</li>
-</ol>
-<h4 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h4><h5 id="ThreadLocal-有什么用？"><a href="#ThreadLocal-有什么用？" class="headerlink" title="ThreadLocal 有什么用？"></a>ThreadLocal 有什么用？</h5><p>通常情况下，我们创建的变量是可以被任何一个线程访问并修改的。<strong>如果想实现每一个线程都有自己的专属本地变量该如何解决呢？</strong></p>
-<p>JDK 中自带的<code>ThreadLocal</code>类正是为了解决这样的问题。 <strong><code>ThreadLocal</code>类主要解决的就是让每个线程绑定自己的值，可以将<code>ThreadLocal</code>类形象的比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。</strong></p>
-<p>如果你创建了一个<code>ThreadLocal</code>变量，那么访问这个变量的每个线程都会有这个变量的本地副本，这也是<code>ThreadLocal</code>变量名的由来。他们可以使用 <code>get()</code> 和 <code>set()</code> 方法来获取默认值或将其值更改为当前线程所存的副本的值，从而避免了线程安全问题。</p>
-<p>再举个简单的例子：两个人去宝屋收集宝物，这两个共用一个袋子的话肯定会产生争执，但是给他们两个人每个人分配一个袋子的话就不会出现这样的问题。如果把这两个人比作线程的话，那么 ThreadLocal 就是用来避免这两个线程竞争的。</p>
-<h5 id="如何使用-ThreadLocal？"><a href="#如何使用-ThreadLocal？" class="headerlink" title="如何使用 ThreadLocal？"></a>如何使用 ThreadLocal？</h5><p>相信看了上面的解释，大家已经搞懂 <code>ThreadLocal</code> 类是个什么东西了。下面简单演示一下如何在项目中实际使用 <code>ThreadLocal</code> 。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadLocalExample</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">     <span class="comment">// SimpleDateFormat 不是线程安全的，所以每个线程都要有自己独立的副本</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;SimpleDateFormat&gt; formatter = ThreadLocal.withInitial(() -&gt; <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyyMMdd HHmm&quot;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">ThreadLocalExample</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadLocalExample</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span> ; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">            <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(obj, <span class="string">&quot;&quot;</span>+i);</span><br><span class="line">            Thread.sleep(<span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">1000</span>));</span><br><span class="line">            t.start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Thread Name= &quot;</span>+Thread.currentThread().getName()+<span class="string">&quot; default Formatter = &quot;</span>+formatter.get().toPattern());</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">1000</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//formatter pattern is changed here by thread, but it won&#x27;t reflect to other threads</span></span><br><span class="line">        formatter.set(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>());</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;Thread Name= &quot;</span>+Thread.currentThread().getName()+<span class="string">&quot; formatter = &quot;</span>+formatter.get().toPattern());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果 :</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Thread Name= 0 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 0 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 1 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 2 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 1 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 3 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 2 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 4 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 3 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 4 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 5 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 5 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 6 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 6 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 7 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 7 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 8 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 9 default Formatter = yyyyMMdd HHmm</span><br><span class="line">Thread Name= 8 formatter = yy-M-d ah:mm</span><br><span class="line">Thread Name= 9 formatter = yy-M-d ah:mm</span><br></pre></td></tr></table></figure>
-
-<p>从输出中可以看出，虽然 <code>Thread-0</code> 已经改变了 <code>formatter</code> 的值，但 <code>Thread-1</code> 默认格式化值与初始化值相同，其他线程也一样。</p>
-<p>上面有一段代码用到了创建 <code>ThreadLocal</code> 变量的那段代码用到了 Java8 的知识，它等于下面这段代码，如果你写了下面这段代码的话，IDEA 会提示你转换为 Java8 的格式(IDEA 真的不错！)。因为 ThreadLocal 类在 Java 8 中扩展，使用一个新的方法<code>withInitial()</code>，将 Supplier 功能接口作为参数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;SimpleDateFormat&gt; formatter = <span class="keyword">new</span> <span class="title class_">ThreadLocal</span>&lt;SimpleDateFormat&gt;()&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> SimpleDateFormat <span class="title function_">initialValue</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyyMMdd HHmm&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h5 id="ThreadLocal-原理"><a href="#ThreadLocal-原理" class="headerlink" title="ThreadLocal 原理"></a>ThreadLocal 原理</h5><p>从 <code>Thread</code>类源代码入手。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Thread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="comment">//......</span></span><br><span class="line">    <span class="comment">//与此线程有关的ThreadLocal值。由ThreadLocal类维护</span></span><br><span class="line">    ThreadLocal.<span class="type">ThreadLocalMap</span> <span class="variable">threadLocals</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//与此线程有关的InheritableThreadLocal值。由InheritableThreadLocal类维护</span></span><br><span class="line">    ThreadLocal.<span class="type">ThreadLocalMap</span> <span class="variable">inheritableThreadLocals</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//......</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>从上面<code>Thread</code>类 源代码可以看出<code>Thread</code> 类中有一个 <code>threadLocals</code> 和 一个 <code>inheritableThreadLocals</code> 变量，它们都是 <code>ThreadLocalMap</code> 类型的变量,我们可以把 <code>ThreadLocalMap</code> 理解为<code>ThreadLocal</code> 类实现的定制化的 <code>HashMap</code>。默认情况下这两个变量都是 null，只有当前线程调用 <code>ThreadLocal</code> 类的 <code>set</code>或<code>get</code>方法时才创建它们，实际上调用这两个方法的时候，我们调用的是<code>ThreadLocalMap</code>类对应的 <code>get()</code>、<code>set()</code>方法。</p>
-<p><code>ThreadLocal</code>类的<code>set()</code>方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(T value)</span> &#123;</span><br><span class="line">    <span class="comment">//获取当前请求的线程</span></span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">    <span class="comment">//取出 Thread 类内部的 threadLocals 变量(哈希表结构)</span></span><br><span class="line">    <span class="type">ThreadLocalMap</span> <span class="variable">map</span> <span class="operator">=</span> getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="literal">null</span>)</span><br><span class="line">        <span class="comment">// 将需要存储的值放入到这个哈希表中</span></span><br><span class="line">        map.set(<span class="built_in">this</span>, value);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        createMap(t, value);</span><br><span class="line">&#125;</span><br><span class="line">ThreadLocalMap <span class="title function_">getMap</span><span class="params">(Thread t)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> t.threadLocals;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过上面这些内容，我们足以通过猜测得出结论：<strong>最终的变量是放在了当前线程的 <code>ThreadLocalMap</code> 中，并不是存在 <code>ThreadLocal</code> 上，<code>ThreadLocal</code> 可以理解为只是<code>ThreadLocalMap</code>的封装，传递了变量值。</strong> <code>ThrealLocal</code> 类中可以通过<code>Thread.currentThread()</code>获取到当前线程对象后，直接通过<code>getMap(Thread t)</code>可以访问到该线程的<code>ThreadLocalMap</code>对象。</p>
-<p><strong>每个<code>Thread</code>中都具备一个<code>ThreadLocalMap</code>，而<code>ThreadLocalMap</code>可以存储以<code>ThreadLocal</code>为 key ，Object 对象为 value 的键值对。</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ThreadLocalMap(ThreadLocal&lt;?&gt; firstKey, Object firstValue) &#123;</span><br><span class="line">    <span class="comment">//......</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>比如我们在同一个线程中声明了两个 <code>ThreadLocal</code> 对象的话， <code>Thread</code>内部都是使用仅有的那个<code>ThreadLocalMap</code> 存放数据的，<code>ThreadLocalMap</code>的 key 就是 <code>ThreadLocal</code>对象，value 就是 <code>ThreadLocal</code> 对象调用<code>set</code>方法设置的值。</p>
-<p><code>ThreadLocal</code> 数据结构如下图所示：</p>
-<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/threadlocal-data-structure.png" alt="ThreadLocal 数据结构">ThreadLocal 数据结构</p>
-<p><code>ThreadLocalMap</code>是<code>ThreadLocal</code>的静态内部类。</p>
-<p><img src="https://oss.javaguide.cn/github/javaguide/java/concurrent/thread-local-inner-class.png" alt="ThreadLocal内部类">ThreadLocal内部类</p>
-<h5 id="ThreadLocal-内存泄露问题是怎么导致的？"><a href="#ThreadLocal-内存泄露问题是怎么导致的？" class="headerlink" title="# ThreadLocal 内存泄露问题是怎么导致的？"></a><a href="#threadlocal-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98%E6%98%AF%E6%80%8E%E4%B9%88%E5%AF%BC%E8%87%B4%E7%9A%84">#</a> ThreadLocal 内存泄露问题是怎么导致的？</h5><p><code>ThreadLocalMap</code> 中使用的 key 为 <code>ThreadLocal</code> 的弱引用，而 value 是强引用。所以，如果 <code>ThreadLocal</code> 没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而 value 不会被清理掉。</p>
-<p>这样一来，<code>ThreadLocalMap</code> 中就会出现 key 为 null 的 Entry。假如我们不做任何措施的话，value 永远无法被 GC 回收，这个时候就可能会产生内存泄露。<code>ThreadLocalMap</code> 实现中已经考虑了这种情况，在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法的时候，会清理掉 key 为 null 的记录。使用完 <code>ThreadLocal</code>方法后最好手动调用<code>remove()</code>方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Entry</span> <span class="keyword">extends</span> <span class="title class_">WeakReference</span>&lt;ThreadLocal&lt;?&gt;&gt; &#123;</span><br><span class="line">    <span class="comment">/** The value associated with this ThreadLocal. */</span></span><br><span class="line">    Object value;</span><br><span class="line"></span><br><span class="line">    Entry(ThreadLocal&lt;?&gt; k, Object v) &#123;</span><br><span class="line">        <span class="built_in">super</span>(k);</span><br><span class="line">        value = v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>弱引用介绍：</strong></p>
-<blockquote>
-<p>如果一个对象只具有弱引用，那就类似于<strong>可有可无的生活用品</strong>。弱引用与软引用的区别在于：只具有弱引用的对象拥有更短暂的生命周期。在垃圾回收器线程扫描它 所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程， 因此不一定会很快发现那些只具有弱引用的对象。</p>
-<p>弱引用可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java 虚拟机就会把这个弱引用加入到与之关联的引用队列中。</p>
-</blockquote>
-<h4 id="静态方法：startPage："><a href="#静态方法：startPage：" class="headerlink" title="静态方法：startPage："></a>静态方法：startPage：</h4><p>根据分页参数保存了一个Page设置到ThreadLocal中保存起来。</p>
-<h4 id="PageIntercepter"><a href="#PageIntercepter" class="headerlink" title="PageIntercepter"></a>PageIntercepter</h4><p>1、注解：@Intercepts，是mybatis提供的插件功能，method &#x3D; “query”说明是针对query方法的插件，简单的可以理解为：这个类可以拦截所有基于mybatis的查询，因为查询接口最后都会调用到query方法。</p>
-<blockquote>
-<p><code>Mybatis</code>拦截器可以对下面4种对象进行拦截：</p>
-<p>• <code>Executor</code>：mybatis的内部执行器，作为调度核心负责调用StatementHandler操作数据库，并把结果集通过ResultSetHandler进行自动映射<br>• <code>StatementHandler</code>：封装了JDBC Statement操作，是sql语法的构建器，负责和数据库进行交互执行sql语句<br>• <code>ParameterHandler</code>：作为处理sql参数设置的对象，主要实现读取参数和对PreparedStatement的参数进行赋值<br>• <code>ResultSetHandler</code>：处理Statement执行完成后返回结果集的接口对象，mybatis通过它把ResultSet集合映射成实体对象</p>
-</blockquote>
-<p>2、其中代码做了一些是否要分页等判断，我们先姑且不关注，直接关注标记@1的核心代码。ExecutorUtil.pageQuery，这是一个分页查询方法</p>
-<h3 id="PageHelper-安全调用"><a href="#PageHelper-安全调用" class="headerlink" title="PageHelper 安全调用"></a><code>PageHelper</code> 安全调用</h3><h4 id="使用-RowBounds-和-PageRowBounds-参数方式是极其安全的"><a href="#使用-RowBounds-和-PageRowBounds-参数方式是极其安全的" class="headerlink" title="使用 RowBounds 和 PageRowBounds 参数方式是极其安全的"></a>使用 <code>RowBounds</code> 和 <code>PageRowBounds</code> 参数方式是极其安全的</h4><h4 id="使用参数方式是极其安全的"><a href="#使用参数方式是极其安全的" class="headerlink" title="使用参数方式是极其安全的"></a>使用参数方式是极其安全的</h4><h4 id="使用-ISelect-接口调用是极其安全的"><a href="#使用-ISelect-接口调用是极其安全的" class="headerlink" title="使用 ISelect 接口调用是极其安全的"></a>使用 ISelect 接口调用是极其安全的</h4><p>ISelect 接口方式除了可以保证安全外，还特别实现了将查询转换为单纯的 count 查询方式，这个方法可以将任意的查询方法，变成一个 <code>select count(*)</code> 的查询方法。</p>
-<h4 id="什么时候会导致不安全的分页？"><a href="#什么时候会导致不安全的分页？" class="headerlink" title="什么时候会导致不安全的分页？"></a>什么时候会导致不安全的分页？</h4><p><code>PageHelper</code> 方法使用了静态的 <code>ThreadLocal</code> 参数，分页参数和线程是绑定的。</p>
-<p>只要你可以保证在 <code>PageHelper</code> 方法调用后紧跟 MyBatis 查询方法，这就是安全的。因为 <code>PageHelper</code> 在 <code>finally</code> 代码段中自动清除了 <code>ThreadLocal</code> 存储的对象。</p>
-<p>如果代码在进入 <code>Executor</code> 前发生异常，就会导致线程不可用，这属于人为的 Bug（例如接口方法和 XML 中的不匹配，导致找不到 <code>MappedStatement</code> 时）， 这种情况由于线程不可用，也不会导致 <code>ThreadLocal</code> 参数被错误的使用。</p>
-<p>但是如果你写出下面这样的代码，就是不安全的用法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(<span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">List&lt;Country&gt; list;</span><br><span class="line"><span class="keyword">if</span>(param1 != <span class="literal">null</span>)&#123;</span><br><span class="line">    list = countryMapper.selectIf(param1);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Country&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种情况下由于 param1 存在 null 的情况，就会导致 PageHelper 生产了一个分页参数，但是没有被消费，这个参数就会一直保留在这个线程上。当这个线程再次被使用时，就可能导致不该分页的方法去消费这个分页参数，这就产生了莫名其妙的分页。</p>
-<p>上面这个代码，应该写成下面这个样子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Country&gt; list;</span><br><span class="line"><span class="keyword">if</span>(param1 != <span class="literal">null</span>)&#123;</span><br><span class="line">    PageHelper.startPage(<span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">    list = countryMapper.selectIf(param1);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Country&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种写法就能保证安全。</p>
-<p>如果你对此不放心，你可以手动清理 <code>ThreadLocal</code> 存储的分页参数，可以像下面这样使用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Country&gt; list;</span><br><span class="line"><span class="keyword">if</span>(param1 != <span class="literal">null</span>)&#123;</span><br><span class="line">    PageHelper.startPage(<span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        list = countryMapper.selectAll();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        PageHelper.clearPage();</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Country&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这么写很不好看，而且没有必要。</p>
-<h2 id="Mybatis-Generator"><a href="#Mybatis-Generator" class="headerlink" title="Mybatis-Generator"></a>Mybatis-Generator</h2><h3 id="注意事项-4"><a href="#注意事项-4" class="headerlink" title="注意事项"></a>注意事项</h3><p>生成的代码可能有问题，如果出现SyntaxException  → 一定要看控制台里的sql → 检查你的sql语句</p>
-<h3 id="TypeHandler"><a href="#TypeHandler" class="headerlink" title="TypeHandler"></a>TypeHandler</h3><blockquote>
-<ol>
-<li>MyBatis之所以能解决MySQL字段和Java属性之间的匹配，全都依赖于<code>org.apache.ibatis.type.BaseTypeHandler&lt;T&gt;</code>抽象类，在该类中定义了3个获取结果的方法、1个更新的方法和4个抽象方法，我们可以自定义该抽象类来实现这个4个抽象方法进行Java类的属性和表字段的映射，可以做一些相关的处理。</li>
-<li>MyBatis在<code>org.apache.ibatis.type</code>包中定义了常用的字段映射<code>Handler</code>，并且在服务启动的时候会在<code>TypeHandlerRegistry</code>构造方法中将其注册到一个Map中，而<code>TypeHandlerRegistry</code>是在MyBatis的核心类<code>Configuration</code>中进行的实例化</li>
-<li>自定义的<code>Handler</code>可以全局通用，不受限于某一个字段或某一个Java类</li>
-<li>在生成Mapper时使用<code>&lt;columnOverride&gt;</code>重写<code>column</code>声明，然后需要指定<code>jdbcType</code>和<code>typeHandler</code></li>
-</ol>
-</blockquote>
-
+          <h1 id="项目1总结"><a href="#项目1总结" class="headerlink" title="项目1总结"></a>项目1总结</h1><p>总结了第一个EE项目的整体思路</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/31/%E9%A1%B9%E7%9B%AE1%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1231,7 +488,6 @@
 
 
   
-
 
 
 

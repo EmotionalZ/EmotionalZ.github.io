@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="🥬Spring前置知识设计模式概念设计模式是软件设计中常见问题的可重用解决方案。它代表了最佳的实践,通常被有经验的面向对象的软件开发人员所采用。设计模式通过提高代码的可重用性、代码间的耦合度降低、程序的可靠性提高等优点,使程序的开发效率和质量得到提高。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="http://example.com/2023/07/31/Spring/index.html">
+<meta property="og:site_name" content="ZYX&#39;s Blog">
+<meta property="og:description" content="🥬Spring前置知识设计模式概念设计模式是软件设计中常见问题的可重用解决方案。它代表了最佳的实践,通常被有经验的面向对象的软件开发人员所采用。设计模式通过提高代码的可重用性、代码间的耦合度降低、程序的可靠性提高等优点,使程序的开发效率和质量得到提高。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728214822367.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728214929515.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728221707382.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728215739724.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204357252.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20220705144717205.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731101446552.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731103851482.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731102642180.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731102615426.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204440016.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731102806840.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731103506322.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731103629377.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731110902566.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731110919478.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204459647.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731110909016.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731111538038.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731120327762.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731112029138.png">
+<meta property="og:image" content="c:/Users/%E4%BD%95/AppData/Roaming/Typora/typora-user-images/image-20230731120557834.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731125214839.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731125200017.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731115620583.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731123120838.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731132330016.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731132645195.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731130512423.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204528215.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204757781.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731145619040.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731154756596.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731152950992.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731155206078.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204657713.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731162034281.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731160644011.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164222717.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163543447.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163335660.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164631745.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163649174.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164345245.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164716459.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171630092.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171619280.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171756200.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731170431575.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731170627290.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204858468.png">
+<meta property="og:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204922005.png">
+<meta property="article:published_time" content="2023-07-31T15:01:31.000Z">
+<meta property="article:modified_time" content="2023-07-31T15:02:59.432Z">
+<meta property="article:author" content="Zhao Yi Xiao">
+<meta property="article:tag" content="zhao Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728214822367.png">
+
+
+<link rel="canonical" href="http://example.com/2023/07/31/Spring/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/07/31/Spring/","path":"2023/07/31/Spring/","title":"Spring"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Spring | ZYX's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ZYX's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Nothing Seek, Nothing Find</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A5%ACSpring"><span class="nav-number">1.</span> <span class="nav-text">🥬Spring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">前置知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%88%99"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">创建型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%8F%AA%E8%83%BD%E5%AD%98%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%AE%9E%E4%BE%8B%E3%80%82"><span class="nav-number">1.1.1.3.1.</span> <span class="nav-text">单例模式 - 系统中一个类只能存在一个对象实例。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">结构型模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">行为型模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%94%B9%E8%BF%9B%E5%BC%80%E5%8F%91"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用设计模式改进开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E6%8C%81%E4%B9%85%E5%B1%82%EF%BC%8Cdao"><span class="nav-number">1.1.3.</span> <span class="nav-text">数据库，持久层，dao</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84-%E4%BB%A3%E7%90%86%EF%BC%88%E5%8A%A8%E6%80%81%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">反射+代理（动态）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E6%80%9D%E8%B7%AF"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">动态代理思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86%E3%80%81%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">静态代理、动态代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.1.5.</span> <span class="nav-text">注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis"><span class="nav-number">1.1.6.</span> <span class="nav-text">Mybatis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC-DI"><span class="nav-number">1.2.</span> <span class="nav-text">IOC&#x2F;DI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">注册组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#OC-%E2%86%92-Inverse-of-Control-%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">OC → Inverse of Control 控制反转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DI-%E2%86%92-Dependency-Injection%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">DI → Dependency Injection依赖注入</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BABean%E2%80%94%E2%80%94%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">创建Bean——依赖注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">组件注册方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%87%BA%E7%BB%84%E4%BB%B6"><span class="nav-number">1.2.2.</span> <span class="nav-text">取出组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring%E6%95%B4%E5%90%88%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">Spring整合单元测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.2.4.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5-2"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">容器初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%85%B3%E9%97%AD"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">容器关闭</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">实例化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-number">1.3.</span> <span class="nav-text">AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5-3"><span class="nav-number">1.3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%91%86SpringAOP"><span class="nav-number">1.3.2.</span> <span class="nav-text">👆SpringAOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%91%86AspectJ"><span class="nav-number">1.3.3.</span> <span class="nav-text">👆AspectJ</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.3.3.1.1.</span> <span class="nav-text">切入点表达式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#advicor"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">advicor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aspect"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">aspect</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.4.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.4.2.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Zhao Yi Xiao</p>
+  <div class="site-description" itemprop="description">ZYX_Blog</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/Spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Zhao Yi Xiao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZYX's Blog">
+      <meta itemprop="description" content="ZYX_Blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Spring | ZYX's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-07-31 23:01:31 / 修改时间：23:02:59" itemprop="dateCreated datePublished" datetime="2023-07-31T23:01:31+08:00">2023-07-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="🥬Spring"><a href="#🥬Spring" class="headerlink" title="🥬Spring"></a>🥬Spring</h1><h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>设计模式是软件设计中常见问题的可重用解决方案。它代表了最佳的实践,通常被有经验的面向对象的软件开发人员所采用。设计模式通过提高代码的可重用性、代码间的耦合度降低、程序的可靠性提高等优点,使程序的开发效率和质量得到提高。</p>
+<span id="more"></span>
+
+<h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h4><ol>
+<li>单一职责原则 - 一个类只做该做的一件事。</li>
+<li>开闭原则 - 软件实体应对扩展开放,对修改关闭。</li>
+<li>里氏替换原则 - 任何基类可以出现的地方子类一定可以出现。</li>
+<li>依赖倒转原则 - 要依赖于抽象,不要依赖于具体。</li>
+<li>接口隔离原则 - 使用多个专门的接口比使用单个总接口好。</li>
+<li>迪米特法则 - 一个软件实体应当尽可能少地与其他实体发生相互作用。</li>
+</ol>
+<h4 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h4><blockquote>
+<p>用于处理对象的创建,在不修改原有系统的前提下,控制对象的创建过程。</p>
+</blockquote>
+<h5 id="单例模式-系统中一个类只能存在一个对象实例。"><a href="#单例模式-系统中一个类只能存在一个对象实例。" class="headerlink" title="单例模式 - 系统中一个类只能存在一个对象实例。"></a>单例模式 - 系统中一个类只能存在一个对象实例。</h5><p>7种实现：</p>
+<p>最完美：枚举、双重检查</p>
+<ul>
+<li>工厂方法模式 - 定义一个用于创建对象的接口,让子类决定实例化哪一个类。</li>
+<li>抽象工厂模式 - 提供一个创建一系列相关或相互依赖对象的接口。</li>
+<li>建造者模式 - 使用多个简单的对象一步一步构建成一个复杂的对象。</li>
+<li>原型模式 - 用原型实例指定创建对象的种类,并且通过拷贝这些原型创建新的对象。</li>
+</ul>
+<h4 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h4><p>关注类和对象的组合。它们用于描述如何将类或对象按某种布局组成更大的结构。</p>
+<ul>
+<li>适配器模式 - 转换一个类的接口以满足用户需求。</li>
+<li>桥接模式 - 将抽象与实现分离,使它们可以独立变化。</li>
+<li>组合模式 - 组合对象包含子部件对象,用来表示部分与整体层次。</li>
+<li>装饰器模式 - 动态地给一个对象增加一些额外的职责。</li>
+<li>外观模式 - 为子系统中的一组接口提供一个统一的高层接口。</li>
+<li>享元模式 - 使用共享对象可有效地支持大量细粒度的对象。</li>
+<li>代理模式 - 使用代理对象来控制对其他对象的访问。</li>
+</ul>
+<h4 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h4><p>关注对象之间的通信。</p>
+<ul>
+<li>命令模式 - 将一个请求封装成一个对象,以便使用不同的请求对客户进行参数化。</li>
+<li>迭代器模式 - 提供一个方法顺序访问一个聚合对象中的各个元素。</li>
+<li>观察者模式 - 定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知。</li>
+<li>中介者模式 - 用一个中介对象来封装一系列的对象交互,中介者使各对象不需要显式地相互引用。</li>
+<li>备忘录模式 - 在不破坏封装性的前提下,捕获一个对象的内部状态,并在该对象之外保存这个状态。</li>
+<li>状态模式 - 当一个对象内在状态改变时允许其改变行为,这个对象看起来像是改变了其类。</li>
+<li>策略模式 - 定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</li>
+<li>模板方法模式 - 定义一个操作中的算法的骨架,而将一些步骤延迟到子类中。</li>
+<li>访问者模式 - 封装一些作用于某种数据结构中的各元素的操作,它可以在不改变这个数据结构的前提下定义作用于这些元素的新的操作。</li>
+</ul>
+<h3 id="使用设计模式改进开发"><a href="#使用设计模式改进开发" class="headerlink" title="使用设计模式改进开发"></a>使用设计模式改进开发</h3><p>Java EE开发中可以在以下几个方面使用设计模式进行优化:</p>
+<ol>
+<li>数据访问层 - 使用DAO模式将数据访问操作抽象化,例如使用Spring JdbcTemplate实现DAO。</li>
+<li>业务层 - 使用业务代表(Business Delegate)模式封装业务服务,降低业务层和其他层的耦合。使用业务对象(Business Object)模式封装业务逻辑。</li>
+<li>Web层 - 使用MVC模式解耦控制器、模型和视图。使用前端控制器(Front Controller)模式实现请求的统一分发。</li>
+<li>权限控制 - 使用代理(Proxy)模式和装饰(Decorator)模式实现权限控制和额外功能扩展。</li>
+<li>配置管理 - 使用依赖注入(DI)模式实现配置的动态注入。</li>
+<li>异步处理 - 使用观察者(Observer)模式实现异步事件处理、监听器。</li>
+<li>会话管理 - 使用策略(Strategy)模式封装不同的会话管理实现。</li>
+<li>缓存 - 使用享元(Flyweight)模式优化内存占用。</li>
+</ol>
+<p>常用的设计模式包括:DAO、MVC、代理、观察者、单例、工厂等。使用合适的设计模式可以提高代码灵活性和可维护性。但也需要根据实际情况确定,过度使用设计模式会增加系统的复杂性。</p>
+<h3 id="数据库，持久层，dao"><a href="#数据库，持久层，dao" class="headerlink" title="数据库，持久层，dao"></a>数据库，持久层，dao</h3><h3 id="反射-代理（动态）"><a href="#反射-代理（动态）" class="headerlink" title="反射+代理（动态）"></a>反射+代理（动态）</h3><blockquote>
+<p>代理就是一种反射</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Thread接收实现Runnable接口的实现类和代理Proxy接收InvocationHandler接口的实现类,二者之间确实有一些相似之处:</p>
+<ol>
+<li>都定义了一个接口,用于接收执行逻辑的实现对象。</li>
+</ol>
+<ul>
+<li>Runnable接口:定义了run()方法</li>
+<li>InvocationHandler接口:定义了invoke()方法</li>
+</ul>
+<ol start="2">
+<li>都由一个主类负责处理调用调度工作。</li>
+</ol>
+<ul>
+<li>Thread类:调用Runnable的run()方法</li>
+<li>Proxy类:调用InvocationHandler的invoke()方法</li>
+</ul>
+<ol start="3">
+<li>Runnable和InvocationHandler可以理解为策略角色。</li>
+</ol>
+<ul>
+<li>封装可替换的执行逻辑</li>
+<li>Thread和Proxy作为上下文调用它们</li>
+</ul>
+<ol start="4">
+<li>都可以起到解耦的作用。</li>
+</ol>
+<ul>
+<li>Thread和Runnable解耦线程模型和任务逻辑</li>
+<li>Proxy和InvocationHandler解耦调用方和处理逻辑</li>
+</ul>
+<ol start="5">
+<li>都能扩展功能。</li>
+</ol>
+<ul>
+<li>Runnable扩展Thread的执行能力</li>
+<li>InvocationHandler扩展Proxy的代理能力</li>
+</ul>
+<p>所以从接口定义、执行调度、解耦关注点等方面来看,两者尽管目的不同,但作为一种设计模式其思想是相通的,都起到了扩展原有功能的作用。</p>
+</blockquote>
+<h4 id="动态代理思路"><a href="#动态代理思路" class="headerlink" title="动态代理思路"></a>动态代理思路</h4><p>生成ProxyHandler和代理类（为了：</p>
+<ol>
+<li>职责清晰：代理类负责 解析并生成被代理类；Handler负责方法重构</li>
+<li>解耦合 - 任意InvocationHandler可以与任意接口结合使用。</li>
+<li>复用性 - 一个InvocationHandler可以复用到多个接口实现类。</li>
+<li>灵活性 - 可以动态替换InvocationHandler来改变代理逻辑。</li>
+</ol>
+<p>）</p>
+<h4 id="静态代理、动态代理"><a href="#静态代理、动态代理" class="headerlink" title="静态代理、动态代理"></a>静态代理、动态代理</h4><blockquote>
+<p>区别在于静态需要接口，需要在构造函数中传入确定的类型（实现了同个接口的“兄弟类”）；动态接口利用Proxy反射实现了在构造函数中写的是接口类型（也就意味着可以随便传入接口类型的什么类），</p>
+<p><strong>重点：</strong>InvocationHandler中重写的方法：invoke：</p>
+<ol>
+<li><p>传的参数可以这么理解:</p>
+<ul>
+<li><p>proxy - 代理类实例</p>
+</li>
+<li><p>method - 正在调用的接口方法的Method实例</p>
+</li>
+<li><p>args - 调用接口方法时传入的参数</p>
+</li>
+</ul>
+</li>
+<li><p>在动态代理第四步中当调用代理类的方法时,会被转发到InvocationHandler.invoke方法中,传入代理类实例、方法相关信息、方法参数。</p>
+</li>
+</ol>
+</blockquote>
+<p>动态第三步VS静态第三步</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728214822367.png" alt="image-20230728214822367"></p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728214929515.png" alt="image-20230728214929515"></p>
+<p>动态第四步VS静态第四步</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728221707382.png" alt="image-20230728221707382"></p>
+<blockquote>
+<p>第二、第三步的内部流程：Proxy的代理</p>
+<ol>
+<li>Proxy类的newProxyInstance方法被调用,创建代理对象。</li>
+<li>newProxyInstance内部通过ProxyClassFactory生成了一个实现了接口的代理类<code>realProxySubject</code></li>
+<li>代理类继承了Proxy,重写了hof方法,hof内部实现了反射调用InvocationHandler.invoke。</li>
+<li>将传入的InvocationHandler设置为代理类的h属性。</li>
+<li>返回这个动态生成的代理类的实例作为代理对象。</li>
+</ol>
+<hr>
+<ol>
+<li>当调用代理对象方法时,会调用hof,然后反射调用InvocationHandler.invoke。</li>
+<li>invoke方法中可以实现自定义代理逻辑。</li>
+<li>invoke最后会通过反射调用目标对象的实际方法。</li>
+<li>目标方法执行后,返回结果返回给调用者。</li>
+</ol>
+<hr>
+<p>其中，在JDK动态代理的实现里,hof是代理类中一个重要的方法。</p>
+<p>hof全称是handOff,中文意思是交接、移交。它是一个protected方法,定义在Proxy类中,签名如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">h</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable</span><br></pre></td></tr></table></figure>
+
+<p>Proxy类生成的代理类会继承Proxy,并重写这个hof方法。</p>
+<p>当通过代理对象调用方法时,会调用hof,hof内部使用反射调用InvocationHandler的invoke方法,传入代理实例、方法和参数。</p>
+<p>hof的具体逻辑是:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Object <span class="title function_">h</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">  <span class="type">Object</span> <span class="variable">ret</span> <span class="operator">=</span> invocationHandler.invoke(proxy, method, args);</span><br><span class="line">  <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以hof起到一个移交的作用,将对代理对象的方法调用移交给InvocationHandler的invoke方法进行处理。</p>
+<p>hof封装了反射调用和异常处理的细节,简化了代理类的代码。</p>
+<p>这样代理类就可以集中精力对invoke返回的结果做后续处理。</p>
+<p>所以hof是一个连接代理类和InvocationHandler的重要桥梁。</p>
+</blockquote>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230728215739724.png" alt="image-20230728215739724"></p>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><h3 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h3><h2 id="IOC-DI"><a href="#IOC-DI" class="headerlink" title="IOC&#x2F;DI"></a>IOC&#x2F;DI</h2><p>三步走：1. 加载类、2. 注册类到容器，3. 使用类，从容器中拿出</p>
+<h3 id="注册组件"><a href="#注册组件" class="headerlink" title="注册组件"></a>注册组件</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204357252.png" alt="image-20230729204357252"></p>
+<h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><h5 id="OC-→-Inverse-of-Control-控制反转"><a href="#OC-→-Inverse-of-Control-控制反转" class="headerlink" title="OC → Inverse of Control 控制反转"></a>OC → Inverse of Control 控制反转</h5><p>控制：实例的生成 （应用程序）</p>
+<p>反转：不靠应用程序来生成，靠Spring来生成</p>
+<p><span style='color:yellow;background:red;font-size:文字大小;font-family:字体;'><strong>容器</strong></span>：放实例的地方</p>
+<p><span style='color:yellow;background:red;font-size:文字大小;font-family:字体;'><strong>组件</strong></span>：放入容器中的实例</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20220705144717205.png" alt="image-20220705144717205"></p>
+<h5 id="DI-→-Dependency-Injection依赖注入"><a href="#DI-→-Dependency-Injection依赖注入" class="headerlink" title="DI → Dependency Injection依赖注入"></a>DI → Dependency Injection依赖注入</h5><p>是控制反转的概念的延续</p>
+<p>DI做的事情是将容器管理的实例给取出来</p>
+<hr>
+<p>应用程序、Spring容器，经过控制反转之后，应用和Spring容器谁穷谁富？</p>
+<p>依赖：谁依赖谁？为什么？</p>
+<p>注入：谁注入谁？注入了什么？</p>
+<hr>
+<p>注意：<span style='color:yellow;background:red;font-size:文字大小;font-family:字体;'><strong>控制反转就是放进去，依赖注入就是取出来</strong></span></p>
+<p>优势：</p>
+<ul>
+<li>减少维护成本</li>
+<li>降低服务器的消耗</li>
+<li>降低开发成本，不需要额外维护实例之间的关系，在容器中已经维护好了</li>
+</ul>
+<h4 id="创建Bean——依赖注入"><a href="#创建Bean——依赖注入" class="headerlink" title="创建Bean——依赖注入"></a>创建Bean——依赖注入</h4><ol>
+<li>构造函数</li>
+<li>⭐<strong>FactoryBean</strong><ol>
+<li></li>
+</ol>
+</li>
+</ol>
+<h4 id="组件注册方式"><a href="#组件注册方式" class="headerlink" title="组件注册方式"></a>组件注册方式</h4><ol>
+<li><p>xml</p>
+</li>
+<li><p>配置类+@Bean注解</p>
+<ol>
+<li><p>步骤：</p>
+<ol>
+<li>维护对象之间的依赖关系</li>
+<li>设置别名</li>
+<li>关联特定对象</li>
+</ol>
+</li>
+<li><p>注意：</p>
+<ol>
+<li><p>对象间关系没维护好</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731101446552.png" alt="image-20230731101446552"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>配置类+@Component注解</p>
+<ol>
+<li><p>步骤+注解</p>
+<ol>
+<li><p>123</p>
+</li>
+<li><p>123</p>
+</li>
+<li><p>123</p>
+<ol>
+<li><p>自动获取实现类</p>
+</li>
+<li><p>注意自动获取后会有一接口多个实现类的情况，需要@Qualify指定，否则会报错</p>
+<p> <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731103851482.png" alt="image-20230731103851482"></p>
+<p> <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731102642180.png" alt="image-20230731102642180"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731102615426.png" alt="image-20230731102615426"></p>
+<h3 id="取出组件"><a href="#取出组件" class="headerlink" title="取出组件"></a>取出组件</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204440016.png" alt="image-20230729204440016"></p>
+<ol>
+<li><strong>App…Contenxt。getBean方法</strong></li>
+</ol>
+<p><img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731102806840.png" alt="image-20230731102806840"></p>
+<p>该方法来自于BeanFactory，又进一步扩展了</p>
+<p>也就是说Factory&#x3D;ApplicationContext&#x3D;容器</p>
+<p>👆：麻烦</p>
+<ol start="2">
+<li><strong>@Autowired</strong>：封装了getBean，自动获取</li>
+</ol>
+<p>👆来自于Spring：👇这个是JDK注解：</p>
+<ol start="3">
+<li><strong>@Resource</strong></li>
+</ol>
+<img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731103506322.png" alt="image-20230731103506322" style="zoom: 67%;" />
+
+
+
+
+
+
+
+<p>re版本：</p>
+<img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731103629377.png" alt="image-20230731103629377" style="zoom:67%;" />
+
+
+
+<h3 id="Spring整合单元测试"><a href="#Spring整合单元测试" class="headerlink" title="Spring整合单元测试"></a>Spring整合单元测试</h3><img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731110902566.png" alt="image-20230731110902566" style="zoom:67%;" />
+
+
+
+<p><img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731110919478.png" alt="image-20230731110919478"></p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204459647.png" alt="image-20230729204459647"></p>
+<h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><ol>
+<li><p>起点</p>
+<p> <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731110909016.png" alt="image-20230731110909016"></p>
+</li>
+<li><p>调用流程</p>
+</li>
+</ol>
+<p><img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731111538038.png" alt="image-20230731111538038"></p>
+<ol>
+<li><p>⭐⭐Proceser</p>
+<p> <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731120327762.png" alt="image-20230731120327762"></p>
+</li>
+<li><p>👆BeanPostProcesser</p>
+<blockquote>
+<p>在Spring IOC容器中,Processor和BeanPostProcessor都属于扩展点,用于在bean初始化前后做定制化处理。两者关系如下:</p>
+<ol>
+<li>Processor是顶层接口,规定了容器初始化时的回调方法,可以监听容器事件。</li>
+<li>BeanPostProcessor则直接作用于bean级别,用于在bean初始化前后进行回调处理。它是Processor接口的子接口。</li>
+<li>BeanPostProcessor通常用于对指定bean做代理增强等处理,而Processor的作用更广,可以实现如事件监听、自定义特殊bean定义等功能。</li>
+<li>多个Processor可以定义不同顺序号进行统一回调,而BeanPostProcessor直接按定义顺序依次回调。</li>
+<li>BeanFactoryPostProcessor也实现了BeanPostProcessor,所以同时拥有两者功能。</li>
+</ol>
+<p>总结一下:</p>
+<ul>
+<li>Processor作用于容器级别,初始化阶段调用;</li>
+<li>BeanPostProcessor作用于bean级别,对象实例化阶段调用;</li>
+<li>BeanPostProcessor是Processor的子接口,功能更具体。</li>
+</ul>
+<p>它们都可以扩展Spring容器,实现自定义逻辑,但作用范围和调用时机不同。</p>
+</blockquote>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731112029138.png" alt="image-20230731112029138"></p>
+<ol>
+<li>每注册一个组件都会经过其前后处理</li>
+<li><strong>像代理，涉及代理（帮代理制造机会），但不是代理</strong></li>
+<li><strong>可以把传入的主实现类换成代理类</strong>：因为</li>
+<li>也就是说创造了切口<strong>切的时机</strong></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>实例：</p>
+<ol>
+<li>sevlet中没法用Spring组件，@autowaired，没交给spring处理</li>
+<li>domain中对象不用放spring，多例。spring中都是单例，一般放mapper、serviceImpl</li>
+<li>utils也不用放，都是静态方法</li>
+</ol>
+<hr>
+<ol>
+<li><p>在service层中测试：</p>
+<p> <img src="C:/Users/何/AppData/Roaming/Typora/typora-user-images/image-20230731120557834.png" alt="image-20230731120557834"></p>
+</li>
+<li><p>Proxyutil用jdk代理invoke取到Service对应实现类中用到的<strong>mapper实例</strong></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731125214839.png" alt="image-20230731125214839"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731125200017.png" alt="image-20230731125200017"></p>
+</li>
+<li><p>配置一下Spring：</p>
+<ol>
+<li><p>向spring容器中注册service组件，此时还没实例化Impl，也就就没有代理运作</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731115620583.png" alt="image-20230731115620583"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731123120838.png" alt="image-20230731123120838"></p>
+</li>
+<li><p>processor增强service：加入代理，不直接走service了，在spring中注册代理实现（增强实现）</p>
+<ol>
+<li><p>无spring最终实现代理：JDK版本</p>
+ <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731132330016.png" alt="image-20230731132330016" style="zoom:200%;" />
+</li>
+<li><p>⭐有Spring版本：<strong>需要Bean Processor</strong></p>
+<ol>
+<li>有这个实现就会在Bean注册的时候来这一步。谁监听？</li>
+</ol>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731132645195.png" alt="image-20230731132645195"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>最后在controller中调用增强的service实现，也就是调用的代理实现，代理起作用了</p>
+ <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731130512423.png" alt="image-20230731130512423" style="zoom:80%;" />
+
+<ol>
+<li><p>最关键的一步没画上，学的太傻逼了：@Autowired。依赖注入，实例化组件表面是Service，其实是Component</p>
+<blockquote>
+<p>Spring 中 Bean 的实例化主要在以下场景中使用:</p>
+<ol>
+<li><p>依赖注入</p>
+<p> Spring 通过依赖注入(DI)的方式,将配置好的Bean实例注入到需要它的类中。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserService userService;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过ApplicationContext获取</p>
+<p> 从Spring容器中获取Bean实例进行使用。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> context.getBean(UserService.class);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bean工厂方法</p>
+<p> Spring管理的Bean也可以直接通过new创建实例。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserServiceImpl</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bean后处理</p>
+<p> 通过BeanPostProcessor可以自定义修改Bean实例。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyBeanProcessor</span> <span class="keyword">implements</span> <span class="title class_">BeanPostProcessor</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> Object <span class="title function_">postProcessBeforeInitialization</span><span class="params">(Object bean)</span> &#123;</span><br><span class="line">    <span class="comment">// 在初始化前处理</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h4 id="容器初始化"><a href="#容器初始化" class="headerlink" title="容器初始化"></a>容器初始化</h4><h4 id="容器关闭"><a href="#容器关闭" class="headerlink" title="容器关闭"></a>容器关闭</h4><p>整个Processor类似于Filter，这俩就是俩方法，要干什么写进去就行，对每个创建的Bean都会执行</p>
+<h3 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204528215.png" alt="image-20230729204528215"></p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204757781.png" alt="image-20230729204757781"></p>
+<p>1. </p>
+<hr>
+<p>替代了代理。</p>
+<ol>
+<li><p>实现：在方法前后添加功能或操作。</p>
+</li>
+<li><p>前任缺点：要把代理操作实现在ProxyUtil中，要改的话很不方便。也就是增强代码和主实现类完全不在一块内容中</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731145619040.png" alt="image-20230731145619040"></p>
+<p> 红色(主实现类)和绿色(增强代码：前后)可以动态结合，不需要了或者想换一个直接解除关联就行</p>
+</li>
+<li><p>解决：第三方功能模块对<strong>增强代码</strong>和<strong>业务代码</strong>进行<strong>管理</strong>和<strong>组合</strong></p>
+</li>
+</ol>
+<hr>
+<p>面向切面编程：</p>
+<p><strong>切面Aspect</strong>：切入点+通知</p>
+<ol>
+<li><p><strong>通知Advice</strong>：就是<font color='red'>增强代码&lt;(绿)</p>
+<ol>
+<li>前置</li>
+<li>后置</li>
+<li>环绕：前后分别</li>
+<li>👆根据加在业务代码的位置分</li>
+<li>返回结果：接收连接点返回值</li>
+<li>异常：捕获过程</li>
+</ol>
+</li>
+<li><p><strong>切入点PointCut</strong>：表达式：增强代码和业务<strong>相关联</strong>的<strong>匹配规则</strong></p>
+</li>
+<li><p><strong>连接点JoinPoint</strong>：<strong>运行中</strong>的<font color='red'>业务方法</font>(动态红)</p>
+</li>
+<li><p>委托类：委托类对象</p>
+</li>
+<li><p>代理类：代理类对象：看有接口没：JDK&#x2F;Cglib</p>
+</li>
+<li><p>织入：将通知应用到目标对象，进而生成代理对象的过程动作（通知+连接点）</p>
+</li>
+</ol>
+<h3 id="👆SpringAOP"><a href="#👆SpringAOP" class="headerlink" title="👆SpringAOP"></a>👆SpringAOP</h3><p>实例：半自动方式：通知、委托的类级别关联（<strong>不如方法级别关联灵活，但是单独靠Spring没法再进一步了</strong>）</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731154756596.png" alt="image-20230731154756596"></p>
+<ol>
+<li><p>创建advice，在其中写增强</p>
+</li>
+<li><p>在Spring设置中：@Bean创建关联ProxyFactoryBean，实现业务代码和增强代码的关联，也就是代理类和Impl的联系，创建了一个代理类</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731152950992.png" alt="image-20230731152950992"></p>
+<ol>
+<li><p>为什么1处可以用名称获得？BeanFactory——nameAward</p>
+</li>
+<li><p>注册的是BeanFactory，其实是UserService类型，如果不在用的时候@Qualify会报错</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731155206078.png" alt="image-20230731155206078"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="👆AspectJ"><a href="#👆AspectJ" class="headerlink" title="👆AspectJ"></a>👆AspectJ</h3><p>为了全自动AOP：方法级别关联</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204657713.png" alt="image-20230729204657713"></p>
+<p>引入：切入点表达式：关联对应的增强代码和业务方法</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731162034281.png" alt="image-20230731162034281"></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><h5 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h5><ol>
+<li><p><strong>Excution</strong></p>
+<blockquote>
+<p>类似正则表达式的匹配规则：</p>
+<p>用在大范围匹配中</p>
+<p>语法：</p>
+<p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731160644011.png" alt="image-20230731160644011"></p>
+<ul>
+<li>阿斯顿</li>
+<li>阿斯顿</li>
+</ul>
+<p>很难做到精准匹配，需要用下面的Annotation</p>
+</blockquote>
+<p> 1.<br> 2. </p>
+</li>
+<li><p><strong>Annotation</strong></p>
+<blockquote>
+<p>自定义注解的方式实现</p>
+<p>用在精准配中</p>
+</blockquote>
+<ol>
+<li>123</li>
+</ol>
+</li>
+</ol>
+<h4 id="advicor"><a href="#advicor" class="headerlink" title="advicor"></a>advicor</h4><p>早，依靠xml，没注解，和Spingboot不兼容</p>
+<h4 id="aspect"><a href="#aspect" class="headerlink" title="aspect"></a>aspect</h4><p>xml+注解：实现方式，</p>
+<ol>
+<li><p>XML：</p>
+<blockquote>
+<ol>
+<li><p>实现Impl</p>
+<p> 类似于此</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164222717.png" alt="image-20230731164222717"></p>
+</li>
+<li><p>实现aspect</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163543447.png" alt="image-20230731163543447"></p>
+</li>
+<li><p>设置表达式，在app.xml中，关联上面两个</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163335660.png" alt="image-20230731163335660"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164631745.png" alt="image-20230731164631745"></p>
+</li>
+<li><p>实例化容器+组件</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731163649174.png" alt="image-20230731163649174"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164345245.png" alt="image-20230731164345245"></p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li><p>如果不想要什么方法的加强了，只需要在xml文件中把相关联的那句话删掉就行</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731164716459.png" alt="image-20230731164716459"></p>
+</li>
+<li></li>
+</ol>
+</li>
+<li><p>注解方式：</p>
+<blockquote>
+<p>需要用到注解的地方：替换xml而已</p>
+<ol>
+<li><p>声明一个切面@Aspect</p>
+<ol>
+<li>其中@Pointcut设置一个方法名称为切入点编号</li>
+<li>@设置各个</li>
+</ol>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171630092.png" alt="image-20230731171630092"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171619280.png" alt="image-20230731171619280"></p>
+</li>
+<li><p>实例化中</p>
+<ol>
+<li>读取配置</li>
+<li>123</li>
+</ol>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731171756200.png" alt="image-20230731171756200"></p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<blockquote>
+<ol>
+<li>logAspect<ol>
+<li>pt1</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>以上两种共同的执行顺序：</p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731170431575.png" alt="image-20230731170431575"></p>
+<p> <img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230731170627290.png" alt="image-20230731170627290"></p>
+</li>
+</ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><blockquote>
+</blockquote>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204858468.png" alt="image-20230729204858468"></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><p><img src="https://gitee.com/EmotionalZ/pic-go/raw/master/img/image-20230729204922005.png" alt="image-20230729204922005"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/31/%E9%A1%B9%E7%9B%AE1%E6%80%BB%E7%BB%93/" rel="prev" title="项目1总结">
+                  <i class="fa fa-angle-left"></i> 项目1总结
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Zhao Yi Xiao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+</body>
+</html>
